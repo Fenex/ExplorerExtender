@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="FileHelper.cs" />
     <Compile Include="FileMover.cs" />
-    <Compile Include="FolderHelper.cs" />
+    <Compile Include="FileOperations.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,7 +82,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Icons\Delete.png" />
     <EmbeddedResource Include="Icons\Trash.png" />
-    <EmbeddedResource Include="Icons\Edit.png" />
     <EmbeddedResource Include="Icons\Add.png" />
     <EmbeddedResource Include="Icons\Html.png" />
   </ItemGroup>

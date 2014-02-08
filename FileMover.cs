@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualBasic.FileIO;
 
 namespace ExplorerExtender
 {
@@ -74,11 +74,10 @@ namespace ExplorerExtender
             var listOfFile = File.ReadAllLines(filename).Where(i => !string.IsNullOrWhiteSpace(i) && File.Exists(i)).OrderBy(i => i).ToList();
 
             listOfFile.ForEach(i => {
-                if (File.Exists(i) && !File.Exists(Path.Combine(folder, Path.GetFileName(i))))
+                if (File.Exists(i))
                     try
                     {
                         FileSystem.MoveFile(i, Path.Combine(folder, Path.GetFileName(i)), UIOption.AllDialogs);
-                        //File.Move(i, Path.Combine(folder, Path.GetFileName(i)));
                     }
                     catch
                     {

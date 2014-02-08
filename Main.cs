@@ -21,7 +21,6 @@ namespace ExplorerExtender
         private bool isClickedOnEmptyArea;
 
         private IntPtr hIconAdd = IntPtr.Zero;
-        private IntPtr hIconEdit = IntPtr.Zero;
         private IntPtr hIconDelete = IntPtr.Zero;
         private IntPtr hIconTrash = IntPtr.Zero;
         private IntPtr hIconRename = IntPtr.Zero;
@@ -38,7 +37,6 @@ namespace ExplorerExtender
         {
             this.hIconAdd = Helper.GetIcon("ExplorerExtender.Icons.Add.png");
             this.hIconDelete = Helper.GetIcon("ExplorerExtender.Icons.Delete.png");
-            this.hIconEdit = Helper.GetIcon("ExplorerExtender.Icons.Edit.png");
             this.hIconTrash = Helper.GetIcon("ExplorerExtender.Icons.Trash.png");
             this.hIconRename = Helper.GetIcon("ExplorerExtender.Icons.Rename.png");
             this.hIconMove = Helper.GetIcon("ExplorerExtender.Icons.Move.png");
@@ -53,7 +51,6 @@ namespace ExplorerExtender
         {
             Helper.DeleteIconObject(ref this.hIconAdd);
             Helper.DeleteIconObject(ref this.hIconDelete);
-            Helper.DeleteIconObject(ref this.hIconEdit);
             Helper.DeleteIconObject(ref this.hIconTrash);
             Helper.DeleteIconObject(ref this.hIconRename);
             Helper.DeleteIconObject(ref this.hIconMove);
@@ -163,9 +160,9 @@ namespace ExplorerExtender
             string str = this.Command[iCommand];
             
             if (str == "Break")
-                FolderHelper.BreakFolder(this.SelectedItems);
+                FileOperations.BreakFolder(this.SelectedItems);
             else if (str == "Build")
-                FolderHelper.BuildFolder(this.SelectedItems);
+                FileOperations.BuildFolder(this.SelectedItems);
             else if (str == "Replace")
             {
                 this.SelectedItems.ForEach(fi =>
